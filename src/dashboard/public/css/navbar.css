@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&family=Mulish:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
+
+:root {
+  --font-primary: "Poppins", sans-serif;
+  --font-secundary: "Montserrat", sans-serif;
+  --font-action: "Mulish", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+nav {
+  background: linear-gradient(rgba(15, 15, 15, 0.6), rgba(25, 25, 25, 0.9)),
+    url("/assets/img/navbar.png");
+  background-size: cover;
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid orange;
+}
+
+.logo {
+  color: rgb(255, 136, 0);
+  font-size: 55px;
+  line-height: 80px;
+  padding: 10px 0px 0px 0px;
+  font-weight: bold;
+}
+.logo:hover {
+  color: rgb(255, 136, 0);
+}
+.dropdown-menu {
+  margin-left: 40px;
+}
+
+.dropdown-item {
+  color: rgb(255, 136, 0);
+}
+
+.dropdown-menu {
+  background: rgb(32, 32, 32) !important;
+}
+
+.dropdown-divider {
+  background: rgb(66, 66, 66) !important;
+  color: rgb(27, 27, 27) !important;
+  border: 1px solid rgb(27, 27, 27) !important;
+}
+
+.avatar {
+  position: relative;
+  border-radius: 50%;
+  max-height: 85px;
+  max-width: 85px;
+  border: 2px solid rgb(46, 46, 46);
+  animation: avatar_move 3s linear infinite alternate-reverse;
+}
+
+.user-round {
+  position: relative;
+  border-radius: 50%;
+  max-height: 60px;
+  max-width: 60px;
+  top: 50%;
+  animation: avatar_move 3s linear infinite alternate-reverse;
+  border: 1px solid rgb(255, 136, 0);
+}
+
+@keyframes avatar_move {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 40px 5px 0 5px;
+}
+
+nav ul li a {
+  font-family: var(--font-secundary);
+  color: white;
+  font-size: 16px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+nav ul li::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: rgb(255, 164, 60);
+  transition: width 500ms ease-in-out;
+}
+
+nav ul li:hover::after {
+  width: 100%;
+}
+
+nav ul li a.active {
+  background: rgb(255, 136, 0);
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  margin: 20px 10px 0 0;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 952px) {
+  label.logo a {
+    font-size: 50px;
+    padding-left: 50px;
+  }
+
+  .avatar {
+    position: relative;
+    border-radius: 50%;
+    max-height: 70px;
+    max-width: 70px;
+    border: 2px solid rgb(46, 46, 46);
+    animation: avatar_move 3s linear infinite alternate-reverse;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1050px) {
+
+  .checkbtn {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgb(32, 32, 32);
+    top: 85px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    z-index: 1000;
+    position: fixed;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a {
+    font-family: var(--font-primary);
+    font-size: 50px;
+    transition: 0.3s ease-in-out;
+  }
+  a:hover {
+    color: rgb(255, 164, 60);
+  }
+
+  nav ul li:hover::after {
+    width: 0%;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+  .dropdown-menu {
+    font-size: 15px;
+  }
+
+  .dropdown-item {
+    font-size: 15px;
+  }
+
+  .dropdown-menu {
+    font-size: 15px;
+  }
+
+  .dropdown-divider {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./components/header.ejs') %>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <%- include('./components/navbar.ejs') %>
+
+    <div class="index">
+      <img src="/assets/img/Zafriel_Logo.png" alt="" class="logo_index" />
+
+      <h1>Zafriel</h1>
+      <p>
+        Olá, sou um simples Bot desenvolvido em JavaScript para ajudar vocês a
+        terem um conforto maior nos servidores do Discord, conto com um sistema
+        de economia enorme e com vários comandos personalizaveís.
+      </p>
+      <p>
+        Me encontro em <strong><%- bot.guilds.cache.size %></strong> servidores
+        com
+        <strong><%- (bot.users.cache.size).toLocaleString() %></strong> membros
+        no momento.
+      </p>
+      <ul class="buttons_index">
+        <li>
+          <a
+            href=" https://discordapp.com/api/oauth2/authorize?client_id=601847636546289664&permissions=8&scope=bot"
+            class=""
+            ><i class="fas fa-external-link-alt"></i> Convite</a
+          >
+        </li>
+        <li>
+          <a href="/dashboard" class=""><i class="fas fa-cog"></i> Dashboard</a>
+        </li>
+        <li>
+          <a href="<%- process.env.DISCORD_INVITE %>" class=""
+            ><i class="fab fa-discord"></i> Discord</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- <div class="heading text-center pt-3">
+        <img class="round logo-avatar" src="https://cdn.glitch.com/3e9304e0-23b6-4d34-8ca4-92f7ba536183%2Fhyoukakk.jpg?v=1602441076647" alt="Hyouka">
+        <h1 class="display-5 heading--title">Hyouka</h1>
+        <p class="heading--subtitle">Hyouka é um bot para Discord feito com dashboard,<br> comandos de diversão, moderação e mais!</p>
+        <a class="btn btn-primary btn-lg mt-1" href="/invite" target="_blank" role="button">+ Me adicione</a>
+        <a class="btn btn-secondary btn-lg mt-1" href="/dashboard" role="button">Dashboard</a>
+    </div> -->
+  </body>
+</html>

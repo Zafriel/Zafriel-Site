@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&family=Mulish:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
+
+:root {
+  --font-primary: "Poppins", sans-serif;
+  --font-secundary: "Montserrat", sans-serif;
+  --font-action: "Mulish", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(rgba(15, 15, 15, 0.6), rgba(25, 25, 25, 0.9)),
+    url("/assets/img/commands-background.jpg");
+  opacity: 90%;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+
+
+.index {
+  position: relative;
+  width: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  right: -23%;
+}
+
+.logo_index {
+  position: relative;
+  border-radius: 50%;
+  max-height: 350px;
+  max-width: 350px;
+  border: 2px solid rgb(46, 46, 46);
+  animation: avatar_move 3s linear infinite alternate-reverse;
+  margin-top: 60px;
+}
+
+.index ul li {
+  display: inline-block;
+  font-size: 30px;
+  font-family: var(--font-action);
+  animation: buttons_flut 3s linear infinite alternate-reverse;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  margin: 10px;
+}
+
+.index ul li {
+  padding: 23px 0 20px 0;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.9);
+}
+
+.index ul li:nth-child(1) {
+  background: orange;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.index ul li:nth-child(2) {
+  background: rgb(91, 93, 94);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.index ul li:nth-child(3) {
+  background: rgb(114, 137, 217);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.index ul li:hover {
+  background: rgba(15, 15, 15, 0.6);
+  color: orange;
+}
+
+@keyframes buttons_flut {
+  0% {
+    transform: translateY(-15%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.index h1 {
+  color: orange;
+  font-family: var(--font-primary);
+  font-weight: bolder;
+  font-size: 4.5rem;
+  transition: 0.3s ease-in-out;
+}
+
+.index h1::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: rgb(255, 164, 60);
+  transition: width 500ms ease-in-out;
+}
+
+.index h1:hover::after {
+  width: 100%;
+}
+
+.index h1:hover {
+  color: white;
+}
+
+.index p {
+  color: rgba(255, 255, 255, 0.74);
+  opacity: 85%;
+  transition: 0.3s ease-in-out;
+}
+
+.index p:hover {
+  opacity: 100%;
+  color: white;
+}
