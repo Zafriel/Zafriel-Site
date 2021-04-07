@@ -66,5 +66,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", index); //pasta de rotas
 
 app.listen(process.env.PORT, () => {
+
   console.log("a dashboard tbm");
 }); //liga servidor
