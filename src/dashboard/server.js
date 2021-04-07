@@ -13,7 +13,7 @@ const index = require('./routes/index')
 
 const { Webhook } = require("@top-gg/sdk");
 
-const webhook = new Webhook("LmAl27052004@@");
+const webhook = new Webhook(");
 
 app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
   console.log("voto detectado")
