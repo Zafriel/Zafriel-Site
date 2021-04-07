@@ -10,6 +10,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "@top-gg/sdk": "^3.0.9",
     "ascii-table": "^0.0.9",
     "canvacord": "^5.0.6",
     "colors": "^1.4.0",

@@ -11,6 +11,14 @@ const StoreMongo = require("connect-mongo")(session)
 const passport = require("passport")
 const index = require('./routes/index')
 
+const { Webhook } = require("@top-gg/sdk");
+
+const webhook = new Webhook("LmAl27052004@@");
+
+app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
+  console.log("voto detectado")
+});
+
 app.use(session({ //Configuração do express-session
      secret: 'keyboard cat',
      cookie: {
@@ -23,8 +31,6 @@ app.use(session({ //Configuração do express-session
 
 app.use(passport.initialize())//inicializa o  passport
 app.use(passport.session())//inicializa o session do passport
-
-
 
 
 app.set("views", path.join(__dirname, "/views"))//diretorio de views

@@ -8,6 +8,10 @@ const client = new Client({
   disableMentions: "everyone",
 });
 
+
+
+
+
 require("./src/utils/functions")(client);
 
 client.config = require("./config");
