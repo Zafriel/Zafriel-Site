@@ -8,6 +8,7 @@ const GuildSchema = require('../models/guild')
 const {verificaSemelhanca} = require('../utils/dife.js')
 
 module.exports.run = async (client, message) => {
+ /*
     if (message.author.bot) return;
     if (!message.guild) return;
     
@@ -65,5 +66,5 @@ module.exports.run = async (client, message) => {
       if (command) {
           command.run(client, message, args, db); //executa o comando
       }
-    }
+    }*/
 }

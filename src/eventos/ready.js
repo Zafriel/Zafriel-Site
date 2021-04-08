@@ -20,9 +20,10 @@ module.exports.run = (client) => {
 
   require("../handler.js")(client); //executa a handler
 
-  client.user.setStatus("dnd");
 
   client.user.setActivity(`🕵️ | Verificando os Votos do Zafriel`, {
     type: "PLAYING",
   });
+  client.user.setStatus("idle");
+
 };

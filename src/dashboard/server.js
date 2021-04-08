@@ -27,15 +27,40 @@ app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
     )
     .setFooter(req.vote.user)
     .setTimestamp()
+    .setColor("#ff7900")
     .setThumbnail(
-      client.user.cache
+      client.users.cache
         .get(req.vote.user)
         .displayAvatarURL({ dynamic: true, format: "jpg", size: 2048 })
     );
 
   client.channels.cache
-    .get("795936120042684427")
-    .send(`<@${req.vote.user}>`, EMBED);
+    .get("829509960160641025")
+    .send(`**${client.users.cache.get(req.vote.user).tag}**`, EMBED);
+});
+
+app.post("/vbwebhook", webhook.middleware(), async (req, res) => {
+  const { MessageEmbed } = require("discord.js");
+
+  const EMBED = new MessageEmbed()
+    .setTitle(`<:void:829507703856562216> Voto no VoidBots`)
+    .setDescription(
+      `**${
+        client.users.cache.get(req.vote.user).tag
+      }** votou no **Zafriel** no site **[VoidBots](https://voidbots.net/bot/601847636546289664/vote)**`
+    )
+    .setFooter(req.vote.user)
+    .setTimestamp()
+    .setColor("#ff7900")
+    .setThumbnail(
+      client.users.cache
+        .get(req.vote.user)
+        .displayAvatarURL({ dynamic: true, format: "jpg", size: 2048 })
+    );
+
+  client.channels.cache
+    .get("829509935313846344")
+    .send(`**${client.users.cache.get(req.vote.user).tag}**`, EMBED);
 });
 
 app.use(
@@ -66,6 +91,5 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", index); //pasta de rotas
 
 app.listen(process.env.PORT, () => {
-
   console.log("a dashboard tbm");
 }); //liga servidor

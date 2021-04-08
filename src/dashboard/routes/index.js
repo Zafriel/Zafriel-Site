@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
         user: req.user
     })
 })
-router.get('/comandos',  (req, res) => {
+/*router.get('/comandos',  (req, res) => {
     res.render('commands.ejs', {
         comandos: [ ...new Set(client.commands.filter(x => x.category !== 'Owner').map(x => x))],
         categorias: [ ...new Set(client.commands.filter(x => x.category !== 'Owner').map(x => x.category))],
@@ -18,9 +18,9 @@ router.get('/comandos',  (req, res) => {
         user: req.user,
     })
 })
-router.get('/login', (req, res) => {
-    res.redirect('/auth/discord')
-})
+// router.get('/login', (req, res) => {
+//     res.redirect('/auth/discord')
+// })
 router.get('/logout', async (req, res) => {
     await req.logout()
     await res.redirect("/");
@@ -36,7 +36,7 @@ router.get('*', (req, res) => {
       user: req.user,
       bot: client
     })
-})
+})*/
 
 module.exports = router
 
